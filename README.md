@@ -10,40 +10,40 @@ KOPIS Open API는 여러 **서비스 단위의 데이터를 제공**합니다.
 - **일괄 수집 데이터**
   - 일괄 수집 가능한 정적 데이터(전국 공연시설 목록 등)
 
-1. **KOPIS Open API 키 발급 신청**
+### 1. **KOPIS Open API 키 발급 신청**
 
-   - 아래 URL에서 신청 -> 이메일로 발급
-   - https://www.kopis.or.kr/por/cs/openapi/openApiUseSend.do?menuId=MNU_00074
+- 아래 URL에서 신청 -> 이메일로 발급
+- https://www.kopis.or.kr/por/cs/openapi/openApiUseSend.do?menuId=MNU_00074
 
-2. **.env 파일을 생성하여 SERVICE_KEY 변수에 키 설정**
+### 2. **.env 파일을 생성하여 SERVICE_KEY 변수에 키 설정**
 
-   ```python
-   SERVICE_KEY=<api키>
-   ```
+```python
+SERVICE_KEY=<api키>
+```
 
-3. **필요 라이브러리 설치**
+### 3. **필요 라이브러리 설치**
 
-   ```
-   pip install -r requirements.txt
-   ```
+```
+pip install -r requirements.txt
+```
 
-   - 위 코드로 설치 혹은 아래 라이브러리 개별 설치 (수업에서 사용하지 라이브러리입니다.)
-     - xmltodict
-     - python-dotenv
+- 위 코드로 설치 혹은 아래 라이브러리 개별 설치 (수업에서 사용하지 라이브러리입니다.)
+  - xmltodict
+  - python-dotenv
 
-4. **config.py** 수집 설정값 입력
+### 4. **config.py** 수집 설정값 입력
 
-   ```python
-   # 수집 기간 설정 (수집 기간을 설정값으로 받는 데이터의 설정값)
-   START_DATE = "20230101"
-   END_DATE = "20230228"
+```python
+# 수집 기간 설정 (수집 기간을 설정값으로 받는 데이터의 설정값)
+START_DATE = "20230101"
+END_DATE = "20230228"
 
-   # 상세조회 할 공연과 공연시설 코드 설정 (상세 조회 데이터의 설정값)
-   PERFORMANCE_CODE = "PF200099" # 예시) 이프덴[뮤지컬]
-   VENUE_CODE = "FC000001" # 예시) 예술의전당
-   ```
+# 상세조회 할 공연과 공연시설 코드 설정 (상세 조회 데이터의 설정값)
+PERFORMANCE_CODE = "PF200099" # 예시) 이프덴[뮤지컬]
+VENUE_CODE = "FC000001" # 예시) 예술의전당
+```
 
-5. **기간을 설정값으로 받는 데이터 수집**
+### 5. **기간을 설정값으로 받는 데이터 수집**
 
 ```
 python -m main.collect_date_range
@@ -67,7 +67,7 @@ python -m main.collect_date_range
   - 19. 극작가 목록 조회 (prferService)
 - 위치 : data_date_range
 
-5. **개별 상세 조회 데이터 수집**
+### 5. **개별 상세 조회 데이터 수집**
 
 ```
 python -m main.collect_detail
@@ -78,7 +78,7 @@ python -m main.collect_detail
   - 4. 공연시설 상세 조회 (pblprfrService)
 - 위치 : data_detail
 
-6. **일괄 수집 데이터 수집**
+### 6. **일괄 수집 데이터 수집**
 
 ```
 python -m main.collect_facility
@@ -287,6 +287,8 @@ python -m main.collect_facility
 - **특징:** 극작가의 활동 내역과 작품 정보를 분석하는 데 활용
 
 </br>
+
+---
 
 # 3. collector 파일 = 서비스명 대조표
 
