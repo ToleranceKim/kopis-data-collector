@@ -24,7 +24,7 @@ KOPIS Open API는 여러 **서비스 단위의 데이터를 제공**합니다.
 pip install -r requirements.txt
 ```
 
-- 위 코드로 설치 혹은 아래 라이브러리 개별 설치 (수업에서 사용하지 라이브러리입니다.)
+- 위 코드로 설치 혹은 아래 라이브러리 개별 설치 (수업에서 사용하지 않은 라이브러리입니다.)
   - xmltodict
   - python-dotenv
 
