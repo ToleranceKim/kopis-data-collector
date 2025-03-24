@@ -1,7 +1,7 @@
 # 1. 사용 가이드
 
 KOPIS Open API는 여러 **서비스 단위의 데이터를 제공**합니다.  
-이 데이터 수집기는 총 **19개 서비스**를 **3가지 유형**으로 분류하여 기능을 구성하였습니다.
+본 데이터 수집기는 총 **19개 서비스**를 **3가지 유형**으로 분류하여 기능을 구성하였습니다.
 
 - **기간을 설정값으로 받는 데이터**
   - 수집 기간 기준으로 수집
@@ -15,13 +15,7 @@ KOPIS Open API는 여러 **서비스 단위의 데이터를 제공**합니다.
 - 아래 URL에서 신청 -> 이메일로 발급
 - https://www.kopis.or.kr/por/cs/openapi/openApiUseSend.do?menuId=MNU_00074
 
-### 2. **.env 파일을 생성하여 SERVICE_KEY 변수에 키 설정**
-
-```python
-SERVICE_KEY=<api키>
-```
-
-### 3. **필요 라이브러리 설치**
+### 2. **필요 라이브러리 설치**
 
 ```
 pip install -r requirements.txt
@@ -30,6 +24,12 @@ pip install -r requirements.txt
 - 위 코드로 설치 혹은 아래 라이브러리 개별 설치 (수업에서 사용하지 라이브러리입니다.)
   - xmltodict
   - python-dotenv
+
+### 3. **.env 파일을 생성하여 SERVICE_KEY 변수에 키 설정**
+
+```python
+SERVICE_KEY=<api키>
+```
 
 ### 4. **config.py** 수집 설정값 입력
 
@@ -45,11 +45,13 @@ VENUE_CODE = "FC000001" # 예시) 예술의전당
 
 ### 5. **기간을 설정값으로 받는 데이터 수집**
 
+터미널에서 입력
+
 ```
 python -m main.collect_date_range
 ```
 
-- 수집 대상
+- **수집 대상**
   - 1. 공연목록 조회 (pblprfrService)
   - 6. 예매상황판 조회 (boxofficeService)
   - 7. 예매통계 기간별 조회 (boxStatsService)
@@ -69,22 +71,26 @@ python -m main.collect_date_range
 
 ### 5. **개별 상세 조회 데이터 수집**
 
+터미널에서 입력
+
 ```
 python -m main.collect_detail
 ```
 
-- 수집 대상
+- **수집 대상**
   - 2. 공연 상세 조회 (pblprfrService)
   - 4. 공연시설 상세 조회 (pblprfrService)
 - 위치 : data_detail
 
 ### 6. **일괄 수집 데이터 수집**
 
+터미널에서 입력
+
 ```
 python -m main.collect_facility
 ```
 
-- 수집 대상
+- **수집 대상**
   - 3. 공연시설 목록 조회 (prfplcService)
   - 5. 기획/제작사 목록 조회 (mnfctService)
 - 위치 : data_facility
