@@ -73,7 +73,7 @@ python -m main.collect_date_range
   - 19. 극작가 목록 조회 (prferService)
 - 위치 : data_date_range
 
-### 5. **개별 상세 조회 데이터 수집**
+### 6. **개별 상세 조회 데이터 수집**
 
 - 터미널에서 입력
 - 실행 경로는 프로젝트 루트(README.md가 있는 폴더, .\kopis_data_collector )
@@ -87,7 +87,7 @@ python -m main.collect_detail
   - 4. 공연시설 상세 조회 (pblprfrService)
 - 위치 : data_detail
 
-### 6. **일괄 수집 데이터 수집**
+### 7. **일괄 수집 데이터 수집**
 
 - 터미널에서 입력
 - 실행 경로는 프로젝트 루트(README.md가 있는 폴더, .\kopis_data_collector )
