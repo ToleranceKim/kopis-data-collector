@@ -17,6 +17,9 @@ KOPIS Open API는 여러 **서비스 단위의 데이터를 제공**합니다.
 
 ### 2. **필요 라이브러리 설치**
 
+- 터미널에서 입력
+- 실행 경로는 프로젝트 루트(README.md가 있는 폴더, .\kopis_data_collector )
+
 ```
 pip install -r requirements.txt
 ```
@@ -45,7 +48,8 @@ VENUE_CODE = "FC000001" # 예시) 예술의전당
 
 ### 5. **기간을 설정값으로 받는 데이터 수집**
 
-터미널에서 입력
+- 터미널에서 입력
+- 실행 경로는 프로젝트 루트(README.md가 있는 폴더, .\kopis_data_collector )
 
 ```
 python -m main.collect_date_range
@@ -71,7 +75,8 @@ python -m main.collect_date_range
 
 ### 5. **개별 상세 조회 데이터 수집**
 
-터미널에서 입력
+- 터미널에서 입력
+- 실행 경로는 프로젝트 루트(README.md가 있는 폴더, .\kopis_data_collector )
 
 ```
 python -m main.collect_detail
@@ -84,7 +89,8 @@ python -m main.collect_detail
 
 ### 6. **일괄 수집 데이터 수집**
 
-터미널에서 입력
+- 터미널에서 입력
+- 실행 경로는 프로젝트 루트(README.md가 있는 폴더, .\kopis_data_collector )
 
 ```
 python -m main.collect_facility
