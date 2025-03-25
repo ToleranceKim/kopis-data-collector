@@ -17,13 +17,12 @@ KOPIS Open API는 여러 **서비스 단위의 데이터를 제공**합니다.
 
 ### 2. **필요 라이브러리 설치**
 
-- 터미널에서 입력
-- 실행 경로는 프로젝트 루트(README.md가 있는 폴더, .\kopis_data_collector )
-
 ```
 pip install -r requirements.txt
 ```
 
+- 터미널에서 입력
+- 실행 경로는 프로젝트 루트(README.md가 있는 폴더, .\kopis_data_collector )
 - 위 코드로 설치 혹은 아래 라이브러리 개별 설치 (수업에서 사용하지 않은 라이브러리입니다.)
   - xmltodict
   - python-dotenv
@@ -48,12 +47,12 @@ VENUE_CODE = "FC000001" # 예시) 예술의전당
 
 ### 5. **기간을 설정값으로 받는 데이터 수집**
 
-- 터미널에서 입력
-- 실행 경로는 프로젝트 루트(README.md가 있는 폴더, .\kopis_data_collector )
-
 ```
 python -m main.collect_date_range
 ```
+
+- 터미널에서 입력
+- 실행 경로는 프로젝트 루트(README.md가 있는 폴더, .\kopis_data_collector )
 
 - **수집 대상**
   - 1. 공연목록 조회 (pblprfrService)
@@ -75,12 +74,12 @@ python -m main.collect_date_range
 
 ### 6. **개별 상세 조회 데이터 수집**
 
-- 터미널에서 입력
-- 실행 경로는 프로젝트 루트(README.md가 있는 폴더, .\kopis_data_collector )
-
 ```
 python -m main.collect_detail
 ```
+
+- 터미널에서 입력
+- 실행 경로는 프로젝트 루트(README.md가 있는 폴더, .\kopis_data_collector )
 
 - **수집 대상**
   - 2. 공연 상세 조회 (pblprfrService)
@@ -89,12 +88,12 @@ python -m main.collect_detail
 
 ### 7. **일괄 수집 데이터 수집**
 
-- 터미널에서 입력
-- 실행 경로는 프로젝트 루트(README.md가 있는 폴더, .\kopis_data_collector )
-
 ```
 python -m main.collect_facility
 ```
+
+- 터미널에서 입력
+- 실행 경로는 프로젝트 루트(README.md가 있는 폴더, .\kopis_data_collector )
 
 - **수집 대상**
   - 3. 공연시설 목록 조회 (prfplcService)
