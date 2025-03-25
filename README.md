@@ -49,10 +49,9 @@ VENUE_CODE = "FC000001" # 예시) 예술의전당
 python -m main.collect_date_range
 ```
 
-- 터미널에서 입력
-- 실행 경로는 프로젝트 루트(README.md가 있는 폴더, .\kopis_data_collector )
+- 터미널에서 입력 (실행 경로 : .\kopis_data_collector)
 
-- **수집 대상**
+- **수집대상(수집되는 서비스)**
   - 1. 공연목록 조회 (pblprfrService)
   - 6. 예매상황판 조회 (boxofficeService)
   - 7. 예매통계 기간별 조회 (boxStatsService)
@@ -68,7 +67,7 @@ python -m main.collect_date_range
   - 17. 수상작 목록 조회 (prfawadService)
   - 18. 축제 목록 조회 (prffestService)
   - 19. 극작가 목록 조회 (prferService)
-- 위치 : data_date_range
+- **수집 위치** : data_date_range
 
 ### 6. **개별 상세 조회 데이터 수집**
 
@@ -76,13 +75,12 @@ python -m main.collect_date_range
 python -m main.collect_detail
 ```
 
-- 터미널에서 입력
-- 실행 경로는 프로젝트 루트(README.md가 있는 폴더, .\kopis_data_collector )
+- 터미널에서 입력 (실행 경로 : .\kopis_data_collector)
 
-- **수집 대상**
+- **수집대상(수집되는 서비스)**
   - 2. 공연 상세 조회 (pblprfrService)
   - 4. 공연시설 상세 조회 (pblprfrService)
-- 위치 : data_detail
+- **수집 위치** : data_detail
 
 ### 7. **일괄 수집 데이터 수집**
 
@@ -90,13 +88,12 @@ python -m main.collect_detail
 python -m main.collect_facility
 ```
 
-- 터미널에서 입력
-- 실행 경로는 프로젝트 루트(README.md가 있는 폴더, .\kopis_data_collector )
+- 터미널에서 입력 (실행 경로 : .\kopis_data_collector)
 
-- **수집 대상**
+- **수집대상(수집되는 서비스)**
   - 3. 공연시설 목록 조회 (prfplcService)
   - 5. 기획/제작사 목록 조회 (mnfctService)
-- 위치 : data_facility
+- **수집 위치** : data_facility
 
 </br>
 
