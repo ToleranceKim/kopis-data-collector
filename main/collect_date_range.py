@@ -58,7 +58,7 @@ def main():
     """
     os.makedirs("./data_date_range", exist_ok=True)
 
-    # 전체 수집 기간 설정 (예: 2024년 1월 1일 ~ 2024년 12월 31일)
+    # 전체 수집 기간 설정 (예: 20240101 ~ 20241231)
     start_date_str = START_DATE
     end_date_str = END_DATE
 
@@ -83,7 +83,7 @@ def main():
     dfs_playwright = []         # (19) 극작가 목록
 
     while current <= end_date:
-        period_end = current + timedelta(days=30)  # 31일로 조정 가능
+        period_end = current + timedelta(days=30)  # 31일 간격 (필요에 따라 조정 가능)
         if period_end > end_date:
             period_end = end_date
 
@@ -222,79 +222,78 @@ def main():
     
     if dfs_pblprfr_list:
         merged_1 = pd.concat(dfs_pblprfr_list, ignore_index=True)
-        merged_1.to_csv(f"{save_path}/performance_list_merged.csv", index=False, encoding="utf-8-sig")
+        merged_1.to_csv(f"{save_path}/공연목록_{start_date_str}~{end_date_str}.csv", index=False, encoding="utf-8-sig")
         print(f"\n(1) 공연목록 CSV 저장: {len(merged_1)} 건")
 
     if dfs_boxoffice:
         merged_6 = pd.concat(dfs_boxoffice, ignore_index=True)
-        merged_6.to_csv(f"{save_path}/boxoffice_merged.csv", index=False, encoding="utf-8-sig")
+        merged_6.to_csv(f"{save_path}/예매상황판_{start_date_str}~{end_date_str}.csv", index=False, encoding="utf-8-sig")
         print(f"(6) 예매상황판 CSV 저장: {len(merged_6)} 건")
 
     if dfs_boxstats_period:
         merged_7 = pd.concat(dfs_boxstats_period, ignore_index=True)
-        merged_7.to_csv(f"{save_path}/boxstats_period_merged.csv", index=False, encoding="utf-8-sig")
+        merged_7.to_csv(f"{save_path}/예매통계(기간별)_{start_date_str}~{end_date_str}.csv", index=False, encoding="utf-8-sig")
         print(f"(7) 예매통계(기간별) CSV 저장: {len(merged_7)} 건")
 
     if dfs_boxstats_cate:
         merged_8 = pd.concat(dfs_boxstats_cate, ignore_index=True)
-        merged_8.to_csv(f"{save_path}/boxstats_cate_merged.csv", index=False, encoding="utf-8-sig")
+        merged_8.to_csv(f"{save_path}/예매통계(장르별)_{start_date_str}~{end_date_str}.csv", index=False, encoding="utf-8-sig")
         print(f"(8) 예매통계(장르별) CSV 저장: {len(merged_8)} 건")
 
     if dfs_boxstats_time:
         merged_9 = pd.concat(dfs_boxstats_time, ignore_index=True)
-        merged_9.to_csv(f"{save_path}/boxstats_time_merged.csv", index=False, encoding="utf-8-sig")
+        merged_9.to_csv(f"{save_path}/예매통계(시간대별)_{start_date_str}~{end_date_str}.csv", index=False, encoding="utf-8-sig")
         print(f"(9) 예매통계(시간대별) CSV 저장: {len(merged_9)} 건")
 
     if dfs_boxstats_price:
         merged_10 = pd.concat(dfs_boxstats_price, ignore_index=True)
-        merged_10.to_csv(f"{save_path}/boxstats_price_merged.csv", index=False, encoding="utf-8-sig")
+        merged_10.to_csv(f"{save_path}/예매통계(가격대별)_{start_date_str}~{end_date_str}.csv", index=False, encoding="utf-8-sig")
         print(f"(10) 예매통계(가격대별) CSV 저장: {len(merged_10)} 건")
 
     if dfs_perf_total:
         merged_11 = pd.concat(dfs_perf_total, ignore_index=True)
-        merged_11.to_csv(f"{save_path}/perf_total_merged.csv", index=False, encoding="utf-8-sig")
+        merged_11.to_csv(f"{save_path}/기간별 통계_{start_date_str}~{end_date_str}.csv", index=False, encoding="utf-8-sig")
         print(f"(11) 기간별 통계 CSV 저장: {len(merged_11)} 건")
 
     if dfs_perf_area:
         merged_12 = pd.concat(dfs_perf_area, ignore_index=True)
-        merged_12.to_csv(f"{save_path}/perf_area_merged.csv", index=False, encoding="utf-8-sig")
+        merged_12.to_csv(f"{save_path}/지역별 통계_{start_date_str}~{end_date_str}.csv", index=False, encoding="utf-8-sig")
         print(f"(12) 지역별 통계 CSV 저장: {len(merged_12)} 건")
 
     if dfs_perf_cate:
         merged_13 = pd.concat(dfs_perf_cate, ignore_index=True)
-        merged_13.to_csv(f"{save_path}/perf_cate_merged.csv", index=False, encoding="utf-8-sig")
+        merged_13.to_csv(f"{save_path}/장르별 통계_{start_date_str}~{end_date_str}.csv", index=False, encoding="utf-8-sig")
         print(f"(13) 장르별 통계 CSV 저장: {len(merged_13)} 건")
 
     if dfs_perf_by:
         merged_14 = pd.concat(dfs_perf_by, ignore_index=True)
-        merged_14.to_csv(f"{save_path}/perf_by_merged.csv", index=False, encoding="utf-8-sig")
+        merged_14.to_csv(f"{save_path}/공연별 통계_{start_date_str}~{end_date_str}.csv", index=False, encoding="utf-8-sig")
         print(f"(14) 공연별 통계 CSV 저장: {len(merged_14)} 건")
 
     if dfs_perf_byfct:
         merged_15 = pd.concat(dfs_perf_byfct, ignore_index=True)
-        merged_15.to_csv(f"{save_path}/perf_byfct_merged.csv", index=False, encoding="utf-8-sig")
+        merged_15.to_csv(f"{save_path}/공연시설별 통계_{start_date_str}~{end_date_str}.csv", index=False, encoding="utf-8-sig")
         print(f"(15) 공연시설별 통계 CSV 저장: {len(merged_15)} 건")
 
     if dfs_perf_price:
         merged_16 = pd.concat(dfs_perf_price, ignore_index=True)
-        merged_16.to_csv(f"{save_path}/perf_price_merged.csv", index=False, encoding="utf-8-sig")
+        merged_16.to_csv(f"{save_path}/가격대별 통계_{start_date_str}~{end_date_str}.csv", index=False, encoding="utf-8-sig")
         print(f"(16) 가격대별 통계 CSV 저장: {len(merged_16)} 건")
 
     if dfs_awards:
         merged_17 = pd.concat(dfs_awards, ignore_index=True)
-        merged_17.to_csv(f"{save_path}/awards_merged.csv", index=False, encoding="utf-8-sig")
+        merged_17.to_csv(f"{save_path}/수상작 목록_{start_date_str}~{end_date_str}.csv", index=False, encoding="utf-8-sig")
         print(f"(17) 수상작 목록 CSV 저장: {len(merged_17)} 건")
 
     if dfs_fest:
         merged_18 = pd.concat(dfs_fest, ignore_index=True)
-        merged_18.to_csv(f"{save_path}/festival_merged.csv", index=False, encoding="utf-8-sig")
+        merged_18.to_csv(f"{save_path}/축제 목록_{start_date_str}~{end_date_str}.csv", index=False, encoding="utf-8-sig")
         print(f"(18) 축제 목록 CSV 저장: {len(merged_18)} 건")
 
     if dfs_playwright:
         merged_19 = pd.concat(dfs_playwright, ignore_index=True)
-        merged_19.to_csv(f"{save_path}/playwright_merged.csv", index=False, encoding="utf-8-sig")
+        merged_19.to_csv(f"{save_path}/극작가 목록_{start_date_str}~{end_date_str}.csv", index=False, encoding="utf-8-sig")
         print(f"(19) 극작가 목록 CSV 저장: {len(merged_19)} 건")
-
 
 if __name__ == "__main__":
     main()
