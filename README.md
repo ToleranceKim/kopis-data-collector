@@ -21,9 +21,7 @@ KOPIS Open API는 여러 **서비스 단위의 데이터를 제공**합니다.
 pip install -r requirements.txt
 ```
 
-- 터미널에서 입력
-- 실행 경로는 프로젝트 루트(README.md가 있는 폴더, .\kopis_data_collector )
-- 위 코드로 설치 혹은 아래 라이브러리 개별 설치 (수업에서 사용하지 않은 라이브러리입니다.)
+- 터미널에 위 코드 입력하여 설치 혹은 아래 라이브러리 개별 설치 (수업에서 사용하지 않은 라이브러리입니다.)
   - xmltodict
   - python-dotenv
 
